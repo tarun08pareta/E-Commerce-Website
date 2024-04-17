@@ -15,6 +15,10 @@ import { CheckoutComponent } from './pages/website/checkout/checkout.component';
 import { CustomerOrdersComponent } from './pages/website/customer-orders/customer-orders.component';
 import { LandingComponent } from './pages/website/landing/landing.component';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { provideHttpClient } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -32,15 +36,17 @@ import { FormsModule } from '@angular/forms';
     CustomerOrdersComponent,
     LandingComponent,
    
+   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,RouterOutlet,
+    CommonModule,RouterLink
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })

@@ -1,11 +1,11 @@
-.parent-div{
+/* .parent-div{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
-}
-.container{
-    width: 100%;
+} */
+.login-container{
+    width: 100vw;
     height: 100vh;
     background: linear-gradient( to right bottom,#ebf4f5,#b5c6e0);
     display: flex;

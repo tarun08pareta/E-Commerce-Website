@@ -1,0 +1,98 @@
+
+  .navbar {
+    width: 100vw;
+    background-color: #d4e1ef;
+    padding: 1rem 0;
+  }
+  
+  .nav-container {
+    /* max-width: 1200px; */
+    width: 100%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-menu{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .menu {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .menu li {
+    margin-right: 1rem;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .menu a:hover {
+    color: #007bff;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f8f9fa;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .search-form {
+    display: flex;
+    margin-left: auto;
+    gap: 2.5px;
+  }
+  
+  .search-form input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu {
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+  
+    .search-form {
+      margin-top: 1rem;
+    }
+  }
+  

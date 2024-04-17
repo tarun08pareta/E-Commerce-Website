@@ -1,5 +1,5 @@
 <div class="parent-div">
-    <div class="container">
+    <div class="login-container">
         <div class="from-Box">
             <header>
                 <h1>login</h1>
@@ -8,12 +8,13 @@
                 <input type="text" name="username" [(ngModel)]="loginObj.userName" placeholder="UserName">
                  <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="password">
                 <a href=""> Forgot password</a>
-                <input type="button" value="Login">
+                <input type="button" value="Login" (click)="onLogin()">
                 <div class="links">
-                    <a href="#"><img src="../../../../assets/facebook.jpg" alt=""></a>
-                    <a href="#"><img src="../../../../assets/google.jpg" alt=""></a>
-                    <a href="#"><img src="../../../../assets/insta.jpg" alt=""></a>
+                    <a href="#" (click)="fillCredentials('tarun@123', '8875055810')"><img src="../../../../assets/facebook.jpg" alt=""></a>
+                    <a href="#" (click)="fillCredentials('tarun@123', '8875055810')"><img src="../../../../assets/google.jpg" alt=""></a>
+                    <a href="#" (click)="fillCredentials('tarun@123', '8875055810')"><img src="../../../../assets/insta.jpg" alt=""></a>
                 </div>
+               
                 <p class="signup">Not a member ?
                     <a href="#">sign up</a>
                 </p>
