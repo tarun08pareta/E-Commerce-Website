@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product/product.service';
+import { Product } from '../../../product.interface';
+import { Category } from '../../../category.interface';
 
 @Component({
   selector: 'app-products',
@@ -8,9 +10,10 @@ import { ProductService } from '../../services/product/product.service';
 })
 export class ProductsComponent implements OnInit {
 
-  categoryList :any[] =[]
-  productList :any[] =[]
- isSidePannerVisiable:boolean= true;
+  categoryList :Category[] =[]
+  productList :Product[] =[]
+ isSidePannerVisiable:boolean= false;
+
 
 productObj:any={
   
@@ -27,11 +30,14 @@ productObj:any={
     "categoryName": ""
   }
 
- constructor( private productSrv:ProductService){}
+ constructor( private productSrv:ProductService){
+  
+ }
 
  ngOnInit(): void {
      this.getAllCategory()
      this.getProducts()
+     
  }
 
  onSave()
@@ -60,11 +66,13 @@ productObj:any={
       {
         alert('Product Update')
         this.getProducts()
+        
       }
       else{
         alert(res.messsage)
       }
   })
+ 
  }
 
  onDelete(item:any){
@@ -82,7 +90,7 @@ productObj:any={
           }
       })
    }
-   console.log(item.data)
+  //  console.log(item.data)
  }
  getAllCategory()
  {
@@ -110,4 +118,6 @@ productObj:any={
  {
   this.isSidePannerVisiable = false
  }
+
+
 }
