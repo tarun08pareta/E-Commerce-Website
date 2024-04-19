@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product/product.service';
 import { Product } from '../../../product.interface';
 import { Category } from '../../../category.interface';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-products',
@@ -15,7 +16,7 @@ export class ProductsComponent implements OnInit {
  isSidePannerVisiable:boolean= false;
 
 
-productObj:any={
+productObj:Product={
   
     "productId": 0,
     "productSku": "",
@@ -30,7 +31,22 @@ productObj:any={
     "categoryName": ""
   }
 
- constructor( private productSrv:ProductService){
+  resetProductObj(){
+  this.productObj={
+    "productId": 0,
+    "productSku": "",
+    "productName": "",
+    "productPrice": 0,
+    "productShortName": "",
+    "productDescription": "",
+    "createdDate": new Date(),
+    "deliveryTimeSpan": "",
+    "categoryId": 0,
+    "productImageUrl": "",
+    "categoryName": ""
+  }
+  }
+ constructor( private productSrv:ProductService,private dialog: MatDialog){
   
  }
 
@@ -48,6 +64,8 @@ productObj:any={
       {
         alert('Product Create')
         this.getProducts()
+        this.resetProductObj();
+        this.closeSidePannel()
       }
       else{
         alert(res.messsage)
@@ -66,7 +84,9 @@ productObj:any={
       {
         alert('Product Update')
         this.getProducts()
-        
+        this.resetProductObj();
+        this.closeSidePannel()
+
       }
       else{
         alert(res.messsage)
@@ -74,6 +94,7 @@ productObj:any={
   })
  
  }
+
 
  onDelete(item:any){
    const isDelete = confirm('Are you sure want to Delete the item')

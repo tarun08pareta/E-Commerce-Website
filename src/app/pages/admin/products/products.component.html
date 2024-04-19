@@ -5,7 +5,7 @@
                 <div class="card-header bg-primary">
                     <div class="row">
 
-                        <div class="col-6" style="color: aliceblue;">
+                        <div class="col-6 d-flex align-items-center " style="color: rgb(17, 17, 17);">
                             PRODUCT-LIST
                         </div>
                         <div class="col-6 text-end">
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body" style="background-color: #ca202c;">
+                <div class="card-body" >
 
                     <div class="row">
 
@@ -44,7 +44,7 @@
             <div class="card">
                 <div class="card-header bg-primary">
                     <div class="row">
-                        <div class="col-6 text-center" style="color: aliceblue;">
+                        <div class="col-6 d-flex align-items-center" style="color: rgb(16, 16, 16);">
                             NEW-PRODUCT
                         </div>
                         <div class="col-6 text-end">
@@ -94,7 +94,7 @@
                         </div>
                         <div class="row pt-2">
                             <div class="col-6 text-center">
-                                <button class="btn btn-sm btn-success">Reset</button>
+                                <button class="btn btn-sm btn-success" (click)="resetProductObj()">Reset</button>
                             </div>
                             <div class="col-6 text-center">
                                 <button class="btn btn-sm btn-success" *ngIf="productObj.productId==0"

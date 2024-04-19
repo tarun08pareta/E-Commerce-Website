@@ -18,6 +18,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { provideHttpClient } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { EditDialogComponent } from './pages/edit-dialog/edit-dialog.component';
+import { MatModule } from './pages/mat/mat.module';
 
 
 
@@ -35,6 +38,7 @@ import { provideHttpClient } from '@angular/common/http';
     CheckoutComponent,
     CustomerOrdersComponent,
     LandingComponent,
+    EditDialogComponent,
    
    
     
@@ -43,10 +47,10 @@ import { provideHttpClient } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,RouterOutlet,
-    CommonModule,RouterLink
+    CommonModule,RouterLink,MatModule
   ],
   providers: [
-    provideClientHydration(),provideHttpClient()
+    provideClientHydration(),provideHttpClient(), provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
