@@ -32,21 +32,7 @@ productObj:Product={
     "categoryName": ""
   }
 
-  // resetProductObj(){
-  // this.productObj={
-  //   "productId": 0,
-  //   "productSku": "",
-  //   "productName": "",
-  //   "productPrice": 0,
-  //   "productShortName": "",
-  //   "productDescription": "",
-  //   "createdDate": new Date(),
-  //   "deliveryTimeSpan": "",
-  //   "categoryId": 0,
-  //   "productImageUrl": "",
-  //   "categoryName": ""
-  // }
-  // }
+  
  constructor( private productSrv:ProductService,private dialog: MatDialog){
   
  }
@@ -85,24 +71,7 @@ productObj:Product={
   // console.log(this.productList)
 }
 
-//  onSave()
-//  {
-//   this.productSrv.saveProduct(this.productObj).subscribe((res:any)=>{
-//     debugger;
-//     if(res.result)
-//       {
-//         alert('Product Create')
-//         this.getProducts()
-//         // this.resetProductObj();
-//         this.closeSidePannel()
-//       }
-//       else{
-//         alert(res.messsage)
-//       }
-//   })
-//  }
 
- // open a dialog box
  onEdit(item:any){
   // this.isSidePannerVisiable= true
   this.productObj = item;
@@ -119,27 +88,7 @@ productObj:Product={
   });
  
 }
-  // this.openSidePannel();
- 
-//  onUpdate()
-//  {
-//   this.productSrv.updateProduct(this.productObj).subscribe((res:any)=>{
-//   debugger;
-//     if(res.result)
-//       {
-//         alert('Product Update')
-//         this.getProducts()
-//         this.resetProductObj();
-//         this.closeSidePannel()
-
-//       }
-//       else{
-//         alert(res.messsage)
-//       }
-//   })
- 
-//  }
-
+  
 
  onDelete(item:any){
    const isDelete = confirm('Are you sure want to Delete the item')
@@ -175,15 +124,7 @@ productObj:Product={
   })
 
  }
-//  openSidePannel()
-//  {
-//   this.isSidePannerVisiable= true
-//  }
 
-//  closeSidePannel()
-//  {
-//   this.isSidePannerVisiable = false
-//  }
 
 
 }

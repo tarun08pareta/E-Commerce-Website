@@ -21,6 +21,27 @@ export class CustomerProductsComponent implements OnInit {
   {
 this.router.navigate(['/product',id])
   }
+
+  addToCart(productId:number)
+  {
+   const addToCartObj = {
+    "CartId": 0,
+    "CustId": 379,
+    "ProductId": productId,
+    "Quantity": 1,
+    "AddedDate": new Date()
+   }
+   this.prodSrv.addToCart(addToCartObj).subscribe((res:any)=>{
+    debugger;
+       if(res.result)
+        {
+          alert('product Add to Cart')
+          this.prodSrv.cartUpdated$?.next(true);
+        }else{
+          alert(res.messsage)
+        }
+   })
+  }
   getAllProductr() {
     this.prodSrv.getProducts().subscribe((res: any) => {
       this.productList = res.data;
@@ -32,6 +53,6 @@ this.router.navigate(['/product',id])
     this.prodSrv.getCatgeory().subscribe((res:any)=>{
       this.categoryList= res.data
     })
-    // console.log(this.categoryList)
+   
   }
 }

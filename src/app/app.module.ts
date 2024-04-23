@@ -53,7 +53,8 @@ import { CustomerProductsComponent } from './pages/website/customer-products/cus
     BrowserModule,
     AppRoutingModule,
     FormsModule,RouterOutlet,
-    CommonModule,RouterLink,MatModule,ReactiveFormsModule,RouterModule.forRoot([])
+    CommonModule,RouterLink,MatModule,ReactiveFormsModule,RouterModule.forRoot([]),
+    
   ],
   providers: [
     provideClientHydration(),provideHttpClient(), provideAnimationsAsync()

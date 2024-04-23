@@ -6,6 +6,10 @@ export const Constant = {
         GET_ALL_PRODUCTS_BY_CATEGORY:"GetAllProductsByCategoryId?id=",
         CREATE_PRODUCT:"CreateProduct",
         UPDATE_PRODUCT:"UpdateProduct",
-        DELET_PRODUCT : 'DeleteProductById?id='
+        DELET_PRODUCT : 'DeleteProductById?id=',
+        ADD_TO_CART:"AddToCart",
+        GET_CART_BY_CUST:"GetCartProductsByCustomerId?id=",
+        REMOVE_CART_PRODUCT:"DeleteProductFromCartById?id="
+        
     }
 }
