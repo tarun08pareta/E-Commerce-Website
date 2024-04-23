@@ -3,6 +3,7 @@ import { ProductService } from '../../services/product/product.service';
 import { Product } from '../../../product.interface';
 import { Category } from '../../../category.interface';
 import { MatDialog } from '@angular/material/dialog';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +14,7 @@ export class ProductsComponent implements OnInit {
 
   categoryList :Category[] =[]
   productList :Product[] =[]
- isSidePannerVisiable:boolean= false;
+//  isSidePannerVisiable:boolean= false;
 
 
 productObj:Product={
@@ -31,21 +32,21 @@ productObj:Product={
     "categoryName": ""
   }
 
-  resetProductObj(){
-  this.productObj={
-    "productId": 0,
-    "productSku": "",
-    "productName": "",
-    "productPrice": 0,
-    "productShortName": "",
-    "productDescription": "",
-    "createdDate": new Date(),
-    "deliveryTimeSpan": "",
-    "categoryId": 0,
-    "productImageUrl": "",
-    "categoryName": ""
-  }
-  }
+  // resetProductObj(){
+  // this.productObj={
+  //   "productId": 0,
+  //   "productSku": "",
+  //   "productName": "",
+  //   "productPrice": 0,
+  //   "productShortName": "",
+  //   "productDescription": "",
+  //   "createdDate": new Date(),
+  //   "deliveryTimeSpan": "",
+  //   "categoryId": 0,
+  //   "productImageUrl": "",
+  //   "categoryName": ""
+  // }
+  // }
  constructor( private productSrv:ProductService,private dialog: MatDialog){
   
  }
@@ -56,44 +57,88 @@ productObj:Product={
      
  }
 
- onSave()
- {
-  this.productSrv.saveProduct(this.productObj).subscribe((res:any)=>{
-    debugger;
-    if(res.result)
-      {
-        alert('Product Create')
-        this.getProducts()
-        this.resetProductObj();
-        this.closeSidePannel()
-      }
-      else{
-        alert(res.messsage)
-      }
-  })
- }
- onEdit(item:any){
-  this.productObj = item;
-  this.openSidePannel();
- }
- onUpdate()
- {
-  this.productSrv.updateProduct(this.productObj).subscribe((res:any)=>{
-  debugger;
-    if(res.result)
-      {
-        alert('Product Update')
-        this.getProducts()
-        this.resetProductObj();
-        this.closeSidePannel()
+ onNewAdd(): void {
+  const dialogRef = this.dialog.open(EditDialogComponent, {
+    width: '45%',
+    height:'520px',
+    enterAnimationDuration:'1000ms',
+    exitAnimationDuration : '1000ms',
+    data: { productObj: { // Initialize with empty productObj
+      "productId": 0,
+      "productSku": "",
+      "productName": "",
+      "productPrice": 0,
+      "productShortName": "",
+      "productDescription": "",
+      "createdDate": new Date(),
+      "deliveryTimeSpan": "",
+      "categoryId": 0,
+      "productImageUrl": "",
+      "categoryName": ""
+    } }
+  });
 
-      }
-      else{
-        alert(res.messsage)
-      }
-  })
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+  });
+
+  // console.log(this.productList)
+}
+
+//  onSave()
+//  {
+//   this.productSrv.saveProduct(this.productObj).subscribe((res:any)=>{
+//     debugger;
+//     if(res.result)
+//       {
+//         alert('Product Create')
+//         this.getProducts()
+//         // this.resetProductObj();
+//         this.closeSidePannel()
+//       }
+//       else{
+//         alert(res.messsage)
+//       }
+//   })
+//  }
+
+ // open a dialog box
+ onEdit(item:any){
+  // this.isSidePannerVisiable= true
+  this.productObj = item;
+  const dialogRef = this.dialog.open(EditDialogComponent, {
+    width: '45%',
+    height:'520px',
+    enterAnimationDuration:'1000ms',
+    exitAnimationDuration : '1000ms',
+    data: { productObj: this.productObj } // Pass productObj to the dialog
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+  });
  
- }
+}
+  // this.openSidePannel();
+ 
+//  onUpdate()
+//  {
+//   this.productSrv.updateProduct(this.productObj).subscribe((res:any)=>{
+//   debugger;
+//     if(res.result)
+//       {
+//         alert('Product Update')
+//         this.getProducts()
+//         this.resetProductObj();
+//         this.closeSidePannel()
+
+//       }
+//       else{
+//         alert(res.messsage)
+//       }
+//   })
+ 
+//  }
 
 
  onDelete(item:any){
@@ -111,7 +156,7 @@ productObj:Product={
           }
       })
    }
-  //  console.log(item.data)
+  
  }
  getAllCategory()
  {
@@ -130,15 +175,15 @@ productObj:Product={
   })
 
  }
- openSidePannel()
- {
-  this.isSidePannerVisiable= true
- }
+//  openSidePannel()
+//  {
+//   this.isSidePannerVisiable= true
+//  }
 
- closeSidePannel()
- {
-  this.isSidePannerVisiable = false
- }
+//  closeSidePannel()
+//  {
+//   this.isSidePannerVisiable = false
+//  }
 
 
 }

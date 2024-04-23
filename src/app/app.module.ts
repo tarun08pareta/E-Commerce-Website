@@ -14,13 +14,16 @@ import { CategoryProductsComponent } from './pages/website/category-products/cat
 import { CheckoutComponent } from './pages/website/checkout/checkout.component';
 import { CustomerOrdersComponent } from './pages/website/customer-orders/customer-orders.component';
 import { LandingComponent } from './pages/website/landing/landing.component';
-import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { EditDialogComponent } from './pages/edit-dialog/edit-dialog.component';
+
 import { MatModule } from './pages/mat/mat.module';
+import { EditDialogComponent } from './pages/admin/products/edit-dialog/edit-dialog.component';
+
+import { CustomerProductsComponent } from './pages/website/customer-products/customer-products.component';
 
 
 
@@ -39,6 +42,9 @@ import { MatModule } from './pages/mat/mat.module';
     CustomerOrdersComponent,
     LandingComponent,
     EditDialogComponent,
+    CustomerProductsComponent,
+    
+  
    
    
     
@@ -47,7 +53,7 @@ import { MatModule } from './pages/mat/mat.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,RouterOutlet,
-    CommonModule,RouterLink,MatModule
+    CommonModule,RouterLink,MatModule,ReactiveFormsModule,RouterModule.forRoot([])
   ],
   providers: [
     provideClientHydration(),provideHttpClient(), provideAnimationsAsync()

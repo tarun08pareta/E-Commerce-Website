@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product/product.service';
-// import { Route } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrl: './landing.component.css',
+  selector: 'app-customer-products',
+  templateUrl: './customer-products.component.html',
+  styleUrl: './customer-products.component.css'
 })
-export class LandingComponent implements OnInit {
+export class CustomerProductsComponent implements OnInit {
   productList: any[] = [];
   categoryList:any[]=[]
-  
   constructor(private prodSrv: ProductService,private router:Router) {}
 
   ngOnInit(): void {
@@ -36,5 +34,4 @@ this.router.navigate(['/product',id])
     })
     // console.log(this.categoryList)
   }
-  
 }

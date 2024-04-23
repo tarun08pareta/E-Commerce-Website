@@ -13,6 +13,10 @@ export class ProductService {
   {
     return this.http.get(Constant.API_END_POINT + Constant.METHODS.GET_ALL_CATEGORY)
   }
+  getProductBYCategory(id:number)
+  {
+    return this.http.get(Constant.API_END_POINT + Constant.METHODS.GET_ALL_PRODUCTS_BY_CATEGORY+id)
+  }
   getProducts()
   {
     return this.http.get(Constant.API_END_POINT + Constant.METHODS. GET_ALL_PRODUCTS)
