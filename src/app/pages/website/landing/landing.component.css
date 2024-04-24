@@ -2,3 +2,16 @@
     height: 50vh;
     overflow-y: auto;
 }
+.navbar{
+    background-color: #cb202d;
+}
+img{
+    height: 50px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  border: 3px solid white;
+  border-radius: 30px;
+}
+#navbarDropdown{
+    color: white;
+}

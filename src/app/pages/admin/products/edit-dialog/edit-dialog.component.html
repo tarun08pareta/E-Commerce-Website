@@ -41,10 +41,15 @@
                             <label for="">Delivery Time Span</label>
                             <input type="text" [(ngModel)]="productObj.deliveryTimeSpan" class="form-control">
                         </div>
-                        <div class="col-6">
+                        <!-- <div class="col-6">
                             <label for="">Image Url</label>
                             <input type="text" [(ngModel)]="productObj.productImageUrl" class="form-control">
+                        </div> -->
+                        <div class="col-6">
+                            <label for="">Product Image</label>
+                            <input type="file" (change)="onFileSelected($event)" class="form-control">
                         </div>
+                        
                         <div class="col-12">
                             <label for="">Product-Description</label>
                             <textarea class="form-control" rows="4"

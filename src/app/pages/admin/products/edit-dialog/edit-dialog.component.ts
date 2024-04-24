@@ -13,6 +13,7 @@ import { ProductsComponent } from '../products.component';
 export class EditDialogComponent implements OnInit {
 
   constructor(private productSrv:ProductService,
+    
     public dialogRef: MatDialogRef<EditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
@@ -40,7 +41,26 @@ ngOnInit(): void {
   }
 
  
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      this.uploadImage(file);
+    }
+  }
 
+  uploadImage(file: File) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.productObj.productImageUrl = reader.result as string;
+      console.log(reader.result)
+    };
+    reader.onerror = error => {
+      console.error('Error reading file:', error);
+    };
+    
+  }
+  
   resetProductObj()
   {
 
@@ -72,7 +92,7 @@ onSave()
       {
         alert('Product Create')
         this.getProducts()
-       
+       this.onClose()
       }
       else{
         alert(res.messsage)

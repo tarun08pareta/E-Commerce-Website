@@ -9,7 +9,8 @@ export const Constant = {
         DELET_PRODUCT : 'DeleteProductById?id=',
         ADD_TO_CART:"AddToCart",
         GET_CART_BY_CUST:"GetCartProductsByCustomerId?id=",
-        REMOVE_CART_PRODUCT:"DeleteProductFromCartById?id="
+        REMOVE_CART_PRODUCT:"DeleteProductFromCartById?id=",
+       
         
     }
 }

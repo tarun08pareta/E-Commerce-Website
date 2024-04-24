@@ -147,7 +147,8 @@ export class LoginComponent implements OnInit {
         this.Admins.push(admin);
         this.saveLocalStorage();
         this.signUpForm.reset(); // Optionally reset the form after saving to local storage
-        this.switchPage();
+        // this.switchPage();
+        this.router.navigateByUrl('/products');
       }
     }
   }
