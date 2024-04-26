@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Constant } from '../constant/constant';
-import { Observable, Subject,throwError } from 'rxjs';
+import { BehaviorSubject, Observable, Subject,throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
@@ -50,5 +50,13 @@ export class ProductService {
   removeProductByCart(custId:number)
   {
     return this.http.get(Constant.API_END_POINT + Constant.METHODS.REMOVE_CART_PRODUCT+custId)
+  }
+
+
+  private searchQuerySubject = new BehaviorSubject<string>('');
+  searchQuery$ = this.searchQuerySubject.asObservable();
+
+  setSearchQuery(query: string) {
+    this.searchQuerySubject.next(query);
   }
 }

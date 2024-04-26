@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, output, Output } from '@angular/core';
 import { ProductService } from '../../services/product/product.service';
 import { Product } from '../../../product.interface';
 import { Category } from '../../../category.interface';
@@ -14,7 +14,8 @@ export class ProductsComponent implements OnInit {
 
   categoryList :Category[] =[]
   productList :Product[] =[]
-//  isSidePannerVisiable:boolean= false;
+  filteredProductList: Product[] = [];
+  searchText: string = '';
 
 
 productObj:Product={
@@ -40,8 +41,34 @@ productObj:Product={
  ngOnInit(): void {
      this.getAllCategory()
      this.getProducts()
-     
+     this.productSrv.searchQuery$.subscribe(query => {
+      this.searchText = query;
+      this.searchProducts();
+    });
  }
+
+ searchProducts() {
+  if (!this.searchText.trim()) {
+    this.filteredProductList = this.productList;
+  } else {
+    this.filteredProductList = this.productList.filter(product =>
+      product.productName.toLowerCase().includes(this.searchText.trim().toLowerCase())
+    );
+  }
+}
+
+//  searchProducts(searchTerm: string): void {
+//   if (searchTerm.trim() !== '') {
+//     this.productList = this.productList.filter(product =>
+//       product.productName.toLowerCase().includes(searchTerm.toLowerCase())
+//     );
+//   } else {
+//     // Reset the product list if search term is empty
+//     this.getProducts();
+//   }
+// }
+
+
 
  onNewAdd(): void {
   const dialogRef = this.dialog.open(EditDialogComponent, {

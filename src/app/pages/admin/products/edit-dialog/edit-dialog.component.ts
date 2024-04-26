@@ -53,7 +53,7 @@ ngOnInit(): void {
     reader.readAsDataURL(file);
     reader.onload = () => {
       this.productObj.productImageUrl = reader.result as string;
-      console.log(reader.result)
+   
     };
     reader.onerror = error => {
       console.error('Error reading file:', error);

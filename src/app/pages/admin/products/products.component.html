@@ -1,3 +1,5 @@
+
+
 <div class="product-container">
     <div class="row">
         <div  class="col-12">
@@ -17,7 +19,7 @@
 
                     <div class="row">
 
-                        <div class="product-col col-3 my-2" *ngFor="let product of productList;let i = index">
+                        <div class="product-col col-3 my-2" *ngFor="let product of filteredProductList;let i = index">
 
                             <div class="product-card card" [ngClass]="{'left-to-right': i % 2 === 0, 'right-to-left': i % 2 !== 0}">
                                 <div class="card-img-container">
