@@ -41,12 +41,15 @@ productObj:Product={
  ngOnInit(): void {
      this.getAllCategory()
      this.getProducts()
+     // search product 
      this.productSrv.searchQuery$.subscribe(query => {
       this.searchText = query;
       this.searchProducts();
     });
+    
  }
 
+ // search product code start
  searchProducts() {
   if (!this.searchText.trim()) {
     this.filteredProductList = this.productList;
@@ -57,17 +60,8 @@ productObj:Product={
   }
 }
 
-//  searchProducts(searchTerm: string): void {
-//   if (searchTerm.trim() !== '') {
-//     this.productList = this.productList.filter(product =>
-//       product.productName.toLowerCase().includes(searchTerm.toLowerCase())
-//     );
-//   } else {
-//     // Reset the product list if search term is empty
-//     this.getProducts();
-//   }
-// }
-
+ // search product code end
+ 
 
 
  onNewAdd(): void {

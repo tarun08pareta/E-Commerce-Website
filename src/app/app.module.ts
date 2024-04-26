@@ -24,7 +24,7 @@ import { MatModule } from './pages/mat/mat.module';
 import { EditDialogComponent } from './pages/admin/products/edit-dialog/edit-dialog.component';
 
 import { CustomerProductsComponent } from './pages/website/customer-products/customer-products.component';
-
+// import {AgmCoreModule } from '@agm/core'
 
 
 @NgModule({
