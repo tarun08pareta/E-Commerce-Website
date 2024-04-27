@@ -34,6 +34,7 @@ import { CustomerProductsComponent } from './pages/website/customer-products/cus
     CategoriesComponent,
     CustomerComponent,
     LayoutComponent,
+    LandingComponent,
     LoginComponent,
     OrderComponent,
     ProductsComponent,

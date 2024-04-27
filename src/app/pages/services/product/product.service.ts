@@ -12,6 +12,14 @@ export class ProductService {
 
   public cartUpdated$ : Subject<boolean> | undefined
 
+
+  //location
+
+  // private accessToken = 'pk.a40122d554bcb855f69d1c6e799f0b46';
+
+  
+
+ 
   
   getCatgeory()
   {
@@ -52,11 +60,19 @@ export class ProductService {
     return this.http.get(Constant.API_END_POINT + Constant.METHODS.REMOVE_CART_PRODUCT+custId)
   }
 
-
+// product search code  start
   private searchQuerySubject = new BehaviorSubject<string>('');
   searchQuery$ = this.searchQuerySubject.asObservable();
 
   setSearchQuery(query: string) {
     this.searchQuerySubject.next(query);
   }
+// product search code end 
+
+getLocation(latitude: number, longitude: number) {
+  // Make a request to LocationIQ API with latitude and longitude
+  const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+  return this.http.get(url);
+}
+
 }

@@ -58,6 +58,7 @@ productObj:Product={
       product.productName.toLowerCase().includes(this.searchText.trim().toLowerCase())
     );
   }
+ 
 }
 
  // search product code end
