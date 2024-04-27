@@ -41,7 +41,7 @@ productObj:Product={
  ngOnInit(): void {
      this.getAllCategory()
      this.getProducts()
-     // search product 
+    
      this.productSrv.searchQuery$.subscribe(query => {
       this.searchText = query;
       this.searchProducts();
