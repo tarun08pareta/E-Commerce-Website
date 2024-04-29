@@ -44,7 +44,7 @@ productObj:Product={
     
      this.productSrv.searchQuery$.subscribe(query => {
       this.searchText = query;
-      this.searchProducts();
+      this.searchProducts();      
     });
     
  }

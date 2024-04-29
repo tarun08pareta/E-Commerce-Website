@@ -13,9 +13,6 @@ export class ProductService {
   public cartUpdated$ : Subject<boolean> | undefined
 
 
-  //location
-
-  // private accessToken = 'pk.a40122d554bcb855f69d1c6e799f0b46';
 
   
 

@@ -55,4 +55,9 @@ export class LandingComponent implements OnInit {
     });
     // console.log(this.categoryList)
   }
+
+  goToAdminLogin()
+  {
+    this.router.navigateByUrl('/login')
+  }
 }

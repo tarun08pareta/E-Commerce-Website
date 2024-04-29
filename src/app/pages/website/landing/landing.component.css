@@ -1,4 +1,4 @@
-.dropdown-menu{
+.category-menu{
     height: 50vh;
     overflow-y: auto;
 }
@@ -14,4 +14,16 @@ img{
 }
 #navbarDropdown{
     color: white;
+}
+
+.dropdown-menu{
+    height: 25vh;
+    
+}
+.dropdown-li div a button{
+/* height: 122px; */
+/* width: auto; */
+}
+.dropdown-li-div2{
+    height: 50%;
 }

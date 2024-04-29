@@ -10,10 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   isswitchPage: boolean = true;
-  // username: string = '';
-  // email: string = '';
-  // password: string = '';
-  // confirmPassword: string = '';
+  
   Admins: {
     username: string;
     email: string;

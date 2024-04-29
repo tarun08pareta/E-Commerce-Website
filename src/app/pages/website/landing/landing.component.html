@@ -19,7 +19,7 @@
                             id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categories
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                        <ul class="category-menu dropdown-menu" aria-labelledby="navbarDropdown" >
                             <li *ngFor="let category of categoryList"><a class="dropdown-item " (click)="navigateToProducts(category.categoryId)" >{{category.categoryName}}</a></li>
                             
                         </ul>
@@ -96,19 +96,26 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle redHover fw-semibold text-uppercase text-black  me-1"
+                        <a class="nav-link dropdown-toggle redHover fw-semibold text-uppercase text-white  me-1"
                             href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <i class="fa fa-user fs-5 me-1" style="color: #e4e8ec;"></i>
                         </a>
-                        <ul class="dropdown-menu" style="left:-50px" aria-labelledby="navbarDropdown">
-                            <li>
-                                <div class="d-flex justify-content-evenly mt-2">
+                        <ul class=" dropdown-menu" style="left:-50px" aria-labelledby="navbarDropdown">
+                            <li class="dropdown-li">
+                                <div class=" d-flex  justify-content-evenly mt-2 ">
                                     <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight"> <button
-                                            class="btn btn-danger rounded-0 px-3">Login</button></a>
+                                            class="btn btn-danger rounded-0 px-1">Login</button></a>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"> <button
-                                            class="btn btn-danger rounded-0 px-3">Register</button></a>
+                                            class="btn btn-danger rounded-0 px-2">Register</button></a>
+                                </div>
+                                <div class=" d-flex flex-column justify-content-evenly mt-3">
+                                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                        aria-controls="offcanvasRight"> <button
+                                            class="btn btn-danger rounded-circle px-3"(click)="goToAdminLogin()" >A-Login</button></a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"> <button
+                                            class="btn btn-danger rounded-circle px-3" (click)="goToAdminLogin()">A-Register</button></a>
                                 </div>
 
                             </li>
